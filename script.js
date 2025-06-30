@@ -51,8 +51,24 @@ function handleInput() {
         }
     });
 
-    if (correct) {
+    if (correct && inputChars.length === snippetChars.length) {
         stopTimer();
+        inputEl.removeEventListener('input', handleInput);
+        inputEl.addEventListener('keydown', handleEnter);
+    }
+}
+
+function handleEnter(e) {
+    if (e.key === 'Enter') {
+        inputEl.removeEventListener('keydown', handleEnter);
+        inputEl.addEventListener('input', handleInput);
+        currentStage++;
+        if (currentStage > 5) {
+            currentStage = 1;
+        }
+        document.querySelectorAll('#stage-buttons button').forEach(btn => btn.classList.remove('active'));
+        document.querySelector(`#stage-buttons button[data-stage="${currentStage}"]`).classList.add('active');
+        loadSnippet();
     }
 }
 
