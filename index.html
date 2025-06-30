@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TypeCodigo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>TypeCodigo</h1>
+            <div id="language-selector">
+                <button data-lang="python">Python</button>
+                <button data-lang="javascript">JavaScript</button>
+                <button data-lang="html">HTML</button>
+                <button data-lang="css">CSS</button>
+            </div>
+        </header>
+        <main>
+            <div id="stage-selector">
+                <h2>Stage</h2>
+                <div id="stage-buttons">
+                    <button data-stage="1">1</button>
+                    <button data-stage="2">2</button>
+                    <button data-stage="3">3</button>
+                    <button data-stage="4">4</button>
+                    <button data-stage="5">5</button>
+                </div>
+            </div>
+            <div id="typing-area">
+                <div id="snippet-container">
+                    <pre id="snippet"></pre>
+                </div>
+                <textarea id="input" spellcheck="false" autocomplete="off" autocorrect="off" autocapitalize="off"></textarea>
+            </div>
+            <div id="timer">0.00</div>
+        </main>
+    </div>
+    <script src="snippets.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
