@@ -64,7 +64,7 @@ h1 {
     height: 100%;
     background-color: transparent;
     border: none;
-    color: transparent;
+    color: #d4d4d4;
     caret-color: #d4d4d4;
     font-family: 'Inconsolata', monospace;
     font-size: 1.2rem;
@@ -72,6 +72,10 @@ h1 {
     padding: 1rem;
     resize: none;
     outline: none;
+}
+
+.typed {
+    opacity: 1;
 }
 
 #timer {
@@ -84,7 +88,6 @@ h1 {
     color: #6a9955;
 }
 
-.incorrect {
-    color: #f44747;
-    text-decoration: underline;
+#snippet-container span {
+    opacity: 0.5;
 }

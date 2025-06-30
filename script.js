@@ -19,6 +19,7 @@ function loadSnippet() {
     currentSnippet.split('').forEach(char => {
         const charSpan = document.createElement('span');
         charSpan.innerText = char;
+        charSpan.classList.add('dimmed'); // Add dimmed class initially
         snippetEl.appendChild(charSpan);
     });
     inputEl.value = '';
@@ -38,14 +39,14 @@ function handleInput() {
     snippetChars.forEach((charSpan, index) => {
         const char = inputChars[index];
         if (char == null) {
-            charSpan.classList.remove('correct', 'incorrect');
+            charSpan.classList.remove('correct', 'incorrect', 'typed', 'dimmed');
             correct = false;
         } else if (char === charSpan.innerText) {
-            charSpan.classList.add('correct');
-            charSpan.classList.remove('incorrect');
+            charSpan.classList.add('correct', 'typed');
+            charSpan.classList.remove('incorrect', 'dimmed');
         } else {
-            charSpan.classList.add('incorrect');
-            charSpan.classList.remove('correct');
+            charSpan.classList.add('incorrect', 'typed');
+            charSpan.classList.remove('correct', 'dimmed');
             correct = false;
         }
     });
